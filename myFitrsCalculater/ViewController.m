@@ -56,17 +56,12 @@
             break;
         case 4:
             [self.memory addObject:@"/"];
-            if ([self.resultLabel.text  isEqual: @"0"]) {
-                NSLog(@"ERROR");
-//                self.resultLabel.text = @"ERORR";
-            }
-            NSLog(@"TEST devision");
             result = [Model calculateDevisionWithFirst:self.firstValue second:self.resultLabel.text];
             break;
     }
     self.resultLabel.text = result;
     self.firstValue = nil;
-    NSLog(@"%@", self.memory);
+//    NSLog(@"%@", self.memory);
 
 }
 - (IBAction)onOneDidTap:(UIButton *)sender {

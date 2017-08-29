@@ -9,10 +9,12 @@
 #import "Model.h"
 
 @interface ViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+
 @property (strong, nonatomic) NSString *firstValue;
 @property (assign, nonatomic) NSInteger action;
-@property (weak, nonatomic) NSMutableArray *memory;
+@property (strong, nonatomic) NSMutableArray *memory;
 //@property (assign, nonatomic) BOOL boolValue;
 
 @end
@@ -22,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.resultLabel.text = @"0";
+    
+    self.resultLabel.text = @"0";
+    self.memory = [[NSMutableArray alloc] init];
 }
 
 - (IBAction)onZeroDidTap:(UIButton *)sender {
@@ -30,30 +34,40 @@
 }
 - (IBAction)onPointDidTap:(UIButton *)sender {
     [self updateResultLabel:@"."];
-    [_memory addObject:@"."];
+    [self.memory addObject:@"."];
 
 }
 - (IBAction)onEqualDidTap:(UIButton *)sender {
     NSString *result;
+    [self.memory addObject:self.firstValue];
     //find type method calculate
     switch (self.action) {
         case 1:
+            [self.memory addObject:@"+"];
             result = [Model calculatePlusWithFirst:self.firstValue second:self.resultLabel.text];
+            break;
         case 2:
+            [self.memory addObject:@"-"];
             result = [Model calculateMinusWithFirst:self.firstValue second:self.resultLabel.text];
+            break;
         case 3:
+            [self.memory addObject:@"*"];
             result = [Model calculateMultiplyWithFirst:self.firstValue second:self.resultLabel.text];
+            break;
         case 4:
+            [self.memory addObject:@"/"];
             if ([self.resultLabel.text  isEqual: @"0"]) {
-                NSLog(@"ERORR");
+                NSLog(@"ERROR");
 //                self.resultLabel.text = @"ERORR";
             }
             NSLog(@"TEST devision");
             result = [Model calculateDevisionWithFirst:self.firstValue second:self.resultLabel.text];
+            break;
     }
     self.resultLabel.text = result;
     self.firstValue = nil;
-    NSLog(@"%@", _memory.description);
+    NSLog(@"%@", self.memory);
+
 }
 - (IBAction)onOneDidTap:(UIButton *)sender {
     [self updateResultLabel:@"1"];
@@ -68,6 +82,8 @@
     self.firstValue = self.resultLabel.text;
     self.resultLabel.text = @"0";
     self.action = 1;
+    [self.memory addObject:@"+"];
+
     NSLog(@"=============%@", self.firstValue);
 }
 - (IBAction)onFourDidTap:(UIButton *)sender {
@@ -83,6 +99,8 @@
     self.firstValue = self.resultLabel.text;
     self.resultLabel.text = @"0";
     self.action = 2;
+    [self.memory addObject:@"-"];
+
 }
 - (IBAction)onSevenDidTap:(UIButton *)sender {
     [self updateResultLabel:@"7"];
@@ -97,6 +115,8 @@
     self.firstValue = self.resultLabel.text;
     self.resultLabel.text = @"0";
     self.action = 3;
+    [self.memory addObject:@"x"];
+
 }
 - (IBAction)onClearDidTap:(UIButton *)sender {
     self.resultLabel.text = @"0";
@@ -110,6 +130,8 @@
     self.firstValue = self.resultLabel.text;
     self.resultLabel.text = @"0";
     self.action = 4;
+    [self.memory addObject:@"/"];
+
 }
 
 -(void)updateResultLabel:(NSString *)number {
@@ -118,6 +140,7 @@
     }else{
         self.resultLabel.text = [NSString stringWithFormat:@"%@%@", self.resultLabel.text, number];
     }
+
 }
 
 @end

@@ -16,7 +16,6 @@
 @property (strong, nonatomic) NSString *firstValue;
 @property (assign, nonatomic) NSInteger action;
 @property (strong, nonatomic) NSMutableArray *memory;
-//@property (assign, nonatomic) BOOL boolValue;
 
 @end
 
@@ -34,7 +33,9 @@
     [self updateResultLabel:@"0"];
 }
 - (IBAction)onPointDidTap:(UIButton *)sender {
-    [self updateResultLabel:@"."];
+    if (![self.resultLabel.text containsString:@"."]) {
+        [self updateResultLabel:@"."];
+    }
 }
 - (IBAction)onEqualDidTap:(UIButton *)sender {
     NSString *result;

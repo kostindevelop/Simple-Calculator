@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *memoryLabel;
 
 @property (strong, nonatomic) NSString *firstValue;
 @property (assign, nonatomic) NSInteger action;
@@ -34,12 +35,9 @@
 }
 - (IBAction)onPointDidTap:(UIButton *)sender {
     [self updateResultLabel:@"."];
-    [self.memory addObject:@"."];
-
 }
 - (IBAction)onEqualDidTap:(UIButton *)sender {
     NSString *result;
-    [self.memory addObject:self.firstValue];
     //find type method calculate
     switch (self.action) {
         case 1:
@@ -59,10 +57,10 @@
             result = [Model calculateDevisionWithFirst:self.firstValue second:self.resultLabel.text];
             break;
     }
+    [self setMemoryText];
+    [self.memory removeAllObjects];
     self.resultLabel.text = result;
     self.firstValue = nil;
-//    NSLog(@"%@", self.memory);
-
 }
 - (IBAction)onOneDidTap:(UIButton *)sender {
     [self updateResultLabel:@"1"];
@@ -75,11 +73,9 @@
 }
 - (IBAction)onPlusDidTap:(UIButton *)sender {
     self.firstValue = self.resultLabel.text;
+    [self.memory addObject:self.firstValue];
     self.resultLabel.text = @"0";
     self.action = 1;
-    [self.memory addObject:@"+"];
-
-    NSLog(@"=============%@", self.firstValue);
 }
 - (IBAction)onFourDidTap:(UIButton *)sender {
     [self updateResultLabel:@"4"];
@@ -92,10 +88,9 @@
 }
 - (IBAction)onMinusDidTap:(UIButton *)sender {
     self.firstValue = self.resultLabel.text;
+    [self.memory addObject:self.firstValue];
     self.resultLabel.text = @"0";
     self.action = 2;
-    [self.memory addObject:@"-"];
-
 }
 - (IBAction)onSevenDidTap:(UIButton *)sender {
     [self updateResultLabel:@"7"];
@@ -108,10 +103,9 @@
 }
 - (IBAction)onMultiplyDidTap:(UIButton *)sender {
     self.firstValue = self.resultLabel.text;
+    [self.memory addObject:self.firstValue];
     self.resultLabel.text = @"0";
     self.action = 3;
-    [self.memory addObject:@"x"];
-
 }
 - (IBAction)onClearDidTap:(UIButton *)sender {
     self.resultLabel.text = @"0";
@@ -123,10 +117,9 @@
 }
 - (IBAction)onDivisionDidTap:(UIButton *)sender {
     self.firstValue = self.resultLabel.text;
+    [self.memory addObject:self.firstValue];
     self.resultLabel.text = @"0";
     self.action = 4;
-    [self.memory addObject:@"/"];
-
 }
 
 -(void)updateResultLabel:(NSString *)number {
@@ -136,6 +129,10 @@
         self.resultLabel.text = [NSString stringWithFormat:@"%@%@", self.resultLabel.text, number];
     }
 
+}
+-(void)setMemoryText{
+    self.memoryLabel.text = [NSString stringWithFormat:@"%@%@%@", [self.memory objectAtIndex:0], [self.memory objectAtIndex:1], self.resultLabel.text];
+    
 }
 
 @end

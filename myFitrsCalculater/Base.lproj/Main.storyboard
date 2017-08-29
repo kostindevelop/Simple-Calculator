@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -323,20 +324,30 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4T-PI-cch">
+                                <rect key="frame" x="16" y="20" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Jm-z2-qLW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Cv-c8-FIs"/>
                             <constraint firstItem="LVR-XT-CKf" firstAttribute="top" secondItem="8Jm-z2-qLW" secondAttribute="bottom" id="2qA-KS-xDP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N4T-PI-cch" secondAttribute="trailing" id="9Ij-UE-8na"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LVR-XT-CKf" secondAttribute="bottom" id="Fpa-pX-RHF"/>
                             <constraint firstItem="LVR-XT-CKf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KcI-mv-1jd"/>
+                            <constraint firstItem="N4T-PI-cch" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LxM-O9-FUB"/>
                             <constraint firstItem="LVR-XT-CKf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="170" id="ap5-Mk-tGB"/>
                             <constraint firstAttribute="trailing" secondItem="8Jm-z2-qLW" secondAttribute="trailing" constant="30" id="bai-4C-bqS"/>
+                            <constraint firstItem="N4T-PI-cch" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bv5-B9-0rR"/>
                             <constraint firstAttribute="trailing" secondItem="LVR-XT-CKf" secondAttribute="trailing" id="d0s-Tw-GMo"/>
                             <constraint firstItem="8Jm-z2-qLW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wmO-hl-F7R"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="memoryLabel" destination="N4T-PI-cch" id="Pu8-he-eGF"/>
                         <outlet property="resultLabel" destination="8Jm-z2-qLW" id="TcD-Cb-NT1"/>
                     </connections>
                 </viewController>

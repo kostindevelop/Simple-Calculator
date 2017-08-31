@@ -113,8 +113,14 @@
     self.firstValue = nil;
 }
 - (IBAction)onPlusMinusDidTap:(UIButton *)sender {
+    if ([self.resultLabel.text containsString:@"-"]) {
+        self.resultLabel.text = [self.resultLabel.text stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    }else{
+        self.resultLabel.text = [NSString stringWithFormat:@"-%@", self.resultLabel.text];
+    }
 }
 - (IBAction)onPercentDidTap:(UIButton *)sender {
+    self.resultLabel.text = [Model calculatePercentWithFirst:self.firstValue second:self.resultLabel.text];
 }
 - (IBAction)onDivisionDidTap:(UIButton *)sender {
     self.firstValue = self.resultLabel.text;
@@ -122,18 +128,17 @@
     self.resultLabel.text = @"0";
     self.action = 4;
 }
-
 -(void)updateResultLabel:(NSString *)number {
     if ([self.resultLabel.text isEqualToString:@"0"]) {
         self.resultLabel.text = number;
     }else{
         self.resultLabel.text = [NSString stringWithFormat:@"%@%@", self.resultLabel.text, number];
     }
-
 }
 -(void)setMemoryText{
-    self.memoryLabel.text = [NSString stringWithFormat:@"%@%@%@", [self.memory objectAtIndex:0], [self.memory objectAtIndex:1], self.resultLabel.text];
-    
+    if (self.memory.count > 1) {
+        self.memoryLabel.text = [NSString stringWithFormat:@"%@%@%@", [self.memory objectAtIndex:0], [self.memory objectAtIndex:1], self.resultLabel.text];
+    }
 }
 
 @end

@@ -14,6 +14,7 @@
 +(NSString *)calculateMinusWithFirst:(NSString *)first second:(NSString *)second;
 +(NSString *)calculateMultiplyWithFirst:(NSString *)first second:(NSString *)second;
 +(NSString *)calculateDevisionWithFirst:(NSString *)first second:(NSString *)second;
++(NSString *)calculatePercentWithFirst:(NSString *)first second:(NSString *)second;
 
 
 @end

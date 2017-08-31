@@ -32,7 +32,11 @@
     float secondNumber = second.floatValue;
     return [second isEqualToString:@"0"] ? @"ERROR" : [NSString stringWithFormat:@"%.2f", firstNumber / secondNumber];
 }
-
++(NSString *)calculatePercentWithFirst:(NSString *)first second:(NSString *)second{
+    float firstNumber = first.floatValue;
+    float secondNumber = second.floatValue;
+    return [NSString stringWithFormat:@"%.2f", (firstNumber / 100) * secondNumber];
+}
 
 
 @end

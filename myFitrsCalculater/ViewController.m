@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "Model.h"
+#import "SettingsSingleton.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 @property (assign, nonatomic) NSInteger action;
 @property (strong, nonatomic) NSMutableArray *memory;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *orangeButton;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *greyButton;
+
 @end
 
 @implementation ViewController
@@ -24,11 +28,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.resultLabel.text = @"0";
     self.memory = [[NSMutableArray alloc] init];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
+//    change label text colore
+    if (singleton.saveModeEnabled) {
+        self.memoryLabel.textColor = [UIColor whiteColor];
+    } else {
+        self.memoryLabel.textColor = [UIColor blackColor];
+    }
+//    change button color and text button colore
+    if (singleton.nightModeEnabled) {
+        NSLog(@"en");
+        for(UIButton *button in self.greyButton)
+        {
+            button.backgroundColor = [UIColor blackColor];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        }
+        for(UIButton *button in self.orangeButton)
+        {
+            button.backgroundColor = [UIColor blackColor];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        }
+    } else {
+        NSLog(@"no en");
+        for(UIButton *button in self.greyButton)
+        {
+            button.backgroundColor = [UIColor grayColor];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        for(UIButton *button in self.orangeButton)
+        {
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            button.backgroundColor = [UIColor orangeColor];
+        }
+
+    }
+}
+// button action
 - (IBAction)onZeroDidTap:(UIButton *)sender {
     [self updateResultLabel:@"0"];
 }
@@ -39,7 +80,7 @@
 }
 - (IBAction)onEqualDidTap:(UIButton *)sender {
     NSString *result;
-    //find type method calculate
+//find type method calculate
     switch (self.action) {
         case 1:
             [self.memory addObject:@"+"];

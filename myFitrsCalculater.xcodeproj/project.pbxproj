@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B50FB2141F5F43DB00A33D56 /* SettingsSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB2131F5F43DB00A33D56 /* SettingsSingleton.m */; };
+		B50FB2171F5F4AA500A33D56 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB2161F5F4AA500A33D56 /* SettingsViewController.m */; };
 		B50FF4471F51B1E9000FDB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF4461F51B1E9000FDB67 /* main.m */; };
 		B50FF44A1F51B1E9000FDB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF4491F51B1E9000FDB67 /* AppDelegate.m */; };
 		B50FF44D1F51B1E9000FDB67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF44C1F51B1E9000FDB67 /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B50FB2121F5F43DB00A33D56 /* SettingsSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSingleton.h; sourceTree = "<group>"; };
+		B50FB2131F5F43DB00A33D56 /* SettingsSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSingleton.m; sourceTree = "<group>"; };
+		B50FB2151F5F4AA500A33D56 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B50FB2161F5F4AA500A33D56 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B50FF4421F51B1E9000FDB67 /* myFitrsCalculater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFitrsCalculater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50FF4461F51B1E9000FDB67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B50FF4481F51B1E9000FDB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 				B50FF4491F51B1E9000FDB67 /* AppDelegate.m */,
 				B50FF44B1F51B1E9000FDB67 /* ViewController.h */,
 				B50FF44C1F51B1E9000FDB67 /* ViewController.m */,
+				B50FB2151F5F4AA500A33D56 /* SettingsViewController.h */,
+				B50FB2161F5F4AA500A33D56 /* SettingsViewController.m */,
 				B50FF44E1F51B1E9000FDB67 /* Main.storyboard */,
 				B50FF4511F51B1E9000FDB67 /* Assets.xcassets */,
 				B50FF4531F51B1E9000FDB67 /* LaunchScreen.storyboard */,
@@ -72,6 +80,8 @@
 				B50FF4451F51B1E9000FDB67 /* Supporting Files */,
 				B51F58191F5300C300233E8F /* Model.h */,
 				B51F581A1F5300C300233E8F /* Model.m */,
+				B50FB2121F5F43DB00A33D56 /* SettingsSingleton.h */,
+				B50FB2131F5F43DB00A33D56 /* SettingsSingleton.m */,
 			);
 			path = myFitrsCalculater;
 			sourceTree = "<group>";
@@ -156,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50FB2141F5F43DB00A33D56 /* SettingsSingleton.m in Sources */,
 				B50FF44D1F51B1E9000FDB67 /* ViewController.m in Sources */,
 				B50FF44A1F51B1E9000FDB67 /* AppDelegate.m in Sources */,
+				B50FB2171F5F4AA500A33D56 /* SettingsViewController.m in Sources */,
 				B50FF4471F51B1E9000FDB67 /* main.m in Sources */,
 				B51F581B1F5300C300233E8F /* Model.m in Sources */,
 			);

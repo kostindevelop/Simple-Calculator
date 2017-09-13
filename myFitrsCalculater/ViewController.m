@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString *firstValue;
 @property (assign, nonatomic) NSInteger action;
 @property (strong, nonatomic) NSMutableArray *memory;
+@property (assign, nonatomic) BOOL userLogin;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *orangeButton;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *greyButton;
@@ -34,15 +35,19 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
+    NSLog(@"%i", self.userLogin);
+    if (!self.userLogin) {
+        [self performSegueWithIdentifier:@"registrationView" sender:self];
+    }
+    NSUserDefaults *settingsUserDef = [NSUserDefaults standardUserDefaults];
 //    change label text colore
-    if (singleton.saveModeEnabled) {
+    if ([settingsUserDef boolForKey:@"settingsSaveMode"]) {
         self.memoryLabel.textColor = [UIColor whiteColor];
     } else {
         self.memoryLabel.textColor = [UIColor blackColor];
     }
 //    change button color and text button colore
-    if (singleton.nightModeEnabled) {
+    if ([settingsUserDef boolForKey:@"settingsNightMode"]) {
         NSLog(@"en");
         for(UIButton *button in self.greyButton)
         {

@@ -17,14 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
-    [self.nightModeSwitch setOn:singleton.nightModeEnabled];
-    [self.saveModeSwitch setOn:singleton.saveModeEnabled];
+////    singleton
+//    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
+//    [self.nightModeSwitch setOn:singleton.nightModeEnabled];
+//    [self.saveModeSwitch setOn:singleton.saveModeEnabled];
+//    user default
+    NSUserDefaults *settingsUserDef = [NSUserDefaults standardUserDefaults];
+    [self.nightModeSwitch setOn:[settingsUserDef boolForKey:@"settingsNightMode"]];
+    [self.saveModeSwitch setOn:[settingsUserDef boolForKey:@"settingsSaveMode"]];
 }
 
 - (IBAction)saveButtonTapped:(UIButton *)sender {
-    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
-    singleton.nightModeEnabled = self.nightModeSwitch.isOn;
-    singleton.saveModeEnabled = self.saveModeSwitch.isOn;
+////    singleton
+//    SettingsSingleton *singleton = [SettingsSingleton sharedInstance];
+//    singleton.nightModeEnabled = self.nightModeSwitch.isOn;
+//    singleton.saveModeEnabled = self.saveModeSwitch.isOn;
+//    user default
+    NSUserDefaults *settingsUserDef = [NSUserDefaults standardUserDefaults];
+    [settingsUserDef setBool:self.nightModeSwitch.isOn forKey:@"settingsNightMode"];
+    [settingsUserDef setBool:self.saveModeSwitch.isOn forKey:@"settingsSaveMode"];
 }
 @end

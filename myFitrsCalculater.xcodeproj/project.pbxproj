@@ -10,7 +10,6 @@
 		B50FB2141F5F43DB00A33D56 /* SettingsSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB2131F5F43DB00A33D56 /* SettingsSingleton.m */; };
 		B50FB2171F5F4AA500A33D56 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB2161F5F4AA500A33D56 /* SettingsViewController.m */; };
 		B50FB28C1F697D3500A33D56 /* serviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB28B1F697D3500A33D56 /* serviceViewController.m */; };
-		B50FB28F1F697F4300A33D56 /* registrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FB28E1F697F4300A33D56 /* registrationViewController.m */; };
 		B50FF4471F51B1E9000FDB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF4461F51B1E9000FDB67 /* main.m */; };
 		B50FF44A1F51B1E9000FDB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF4491F51B1E9000FDB67 /* AppDelegate.m */; };
 		B50FF44D1F51B1E9000FDB67 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50FF44C1F51B1E9000FDB67 /* ViewController.m */; };
@@ -27,8 +26,6 @@
 		B50FB2161F5F4AA500A33D56 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B50FB28A1F697D3500A33D56 /* serviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serviceViewController.h; sourceTree = "<group>"; };
 		B50FB28B1F697D3500A33D56 /* serviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = serviceViewController.m; sourceTree = "<group>"; };
-		B50FB28D1F697F4300A33D56 /* registrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registrationViewController.h; sourceTree = "<group>"; };
-		B50FB28E1F697F4300A33D56 /* registrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registrationViewController.m; sourceTree = "<group>"; };
 		B50FF4421F51B1E9000FDB67 /* myFitrsCalculater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFitrsCalculater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50FF4461F51B1E9000FDB67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B50FF4481F51B1E9000FDB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,8 +79,6 @@
 				B50FB28A1F697D3500A33D56 /* serviceViewController.h */,
 				B50FB28B1F697D3500A33D56 /* serviceViewController.m */,
 				B50FF44E1F51B1E9000FDB67 /* Main.storyboard */,
-				B50FB28D1F697F4300A33D56 /* registrationViewController.h */,
-				B50FB28E1F697F4300A33D56 /* registrationViewController.m */,
 				B50FF4511F51B1E9000FDB67 /* Assets.xcassets */,
 				B50FF4531F51B1E9000FDB67 /* LaunchScreen.storyboard */,
 				B50FF4561F51B1E9000FDB67 /* Info.plist */,
@@ -145,6 +140,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -177,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50FB2141F5F43DB00A33D56 /* SettingsSingleton.m in Sources */,
-				B50FB28F1F697F4300A33D56 /* registrationViewController.m in Sources */,
 				B50FF44D1F51B1E9000FDB67 /* ViewController.m in Sources */,
 				B50FF44A1F51B1E9000FDB67 /* AppDelegate.m in Sources */,
 				B50FB2171F5F4AA500A33D56 /* SettingsViewController.m in Sources */,

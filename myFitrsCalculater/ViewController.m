@@ -35,10 +35,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSLog(@"%i", self.userLogin);
-    if (!self.userLogin) {
-        [self performSegueWithIdentifier:@"registrationView" sender:self];
-    }
     NSUserDefaults *settingsUserDef = [NSUserDefaults standardUserDefaults];
 //    change label text colore
     if ([settingsUserDef boolForKey:@"settingsSaveMode"]) {
